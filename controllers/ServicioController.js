@@ -4,7 +4,7 @@ const models = require ('../models');
 exports.list = async(req, res, next) =>{ 
     try { 
         //pide traer todos los campos del modelo Servicio
-        const register = await models.Categoria.findAll();
+        const register = await models.Servicio.findAll();
         if(register){
             res.status(200).json(register);
         }else{
