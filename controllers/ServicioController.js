@@ -3,7 +3,7 @@ const models = require ('../models');
 
 exports.list = async(req, res, next) =>{ 
     try { 
-        //pide traer todos los campos del modelo User
+        //pide traer todos los campos del modelo Servicio
         const register = await models.Servicio.findAll();
         if(register){
             res.status(200).json(register);
@@ -13,6 +13,7 @@ exports.list = async(req, res, next) =>{
             })
         }
     } catch(error) { 
+        console.log(error.message),
         res.status(500).send({
             message: 'Error||'
         })
