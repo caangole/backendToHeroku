@@ -13,7 +13,9 @@ exports.list = async(req, res, next) =>{
             })
         }
     } catch(error) { 
-        console.log(error.message),
+        error => {
+            console.log(error.message);
+        },
         res.status(500).send({
             message: 'Error||'
         })
