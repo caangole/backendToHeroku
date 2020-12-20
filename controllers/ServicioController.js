@@ -13,11 +13,8 @@ exports.list = async(req, res, next) =>{
             })
         }
     } catch(error) { 
-        error => {
-            console.log(error.message);
-        },
         res.status(500).send({
-            message: 'Error||'
+            message: error.message
         })
         next(error);
     }
