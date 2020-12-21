@@ -103,3 +103,37 @@ exports.update = async(req, res, next) =>{
         next(error);
     }
 };
+
+exports.activate = async(req, res, next) =>{
+    try{
+        const register = await models.Usuario.update({estado: 1},
+            {
+                where: {
+                    id: req.body.id
+                },
+            });
+            res.status(200).json(register);
+        }catch (error){
+        res.status(500).send({
+            message: 'Error.'
+        });
+        next(error);
+    }
+};
+
+exports.deactivate = async(req, res, next) =>{
+    try{
+        const register = await models.Usuario.update({estado: 0},
+            {
+                where: {
+                    id: req.body.id
+                },
+            });
+            res.status(200).json(register);
+        }catch (error){
+        res.status(500).send({
+            message: 'Error.'
+        });
+        next(error);
+    }
+};

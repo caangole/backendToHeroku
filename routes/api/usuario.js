@@ -9,6 +9,8 @@ const auth = require('../../middlewares/auth');
 router.post('/register',  usuarioController.register);
 router.put('/update', usuarioController.update);
 router.get('/list', usuarioController.listar);
+router.put('/activate', usuarioController.activate);
+router.put('/deactivate', usuarioController.deactivate);
 
 //ruta login sin restricción de acceso
 router.post('/login', usuarioController.login);
