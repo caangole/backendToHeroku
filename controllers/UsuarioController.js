@@ -84,7 +84,7 @@ exports.update = async(req, res, next) =>{
     try{
         const usuario= await models.Usuario.findOne({where : {email: req.body.email}});
         if(usuario){
-            const usuario = await models.Usuario.update({name: req.body.name},  
+            const usuario = await models.Usuario.update({nombre: req.body.nombre, rol: req.body.rol, password: req.body.password, email: req.body.email, tipo_documento: req.body.tipo_documento, num_documento: req.body.num_documento, direccion: req.body.direccion, telefono: req.body.telefono },  
             {
                 where: {
                     email: req.body.email
