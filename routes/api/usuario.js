@@ -6,8 +6,8 @@ const usuarioController = require('../../controllers/UsuarioController.js');
 const auth = require('../../middlewares/auth');
 
 //rutas con restricción de acceso
-router.post('/register', auth.verificarAdministrador, usuarioController.register);
-router.put('./update', auth.verificarAdministrador ,usuarioController.update);
+router.post('/register',  usuarioController.register);
+router.put('./update', usuarioController.update);
 router.get('/list', usuarioController.listar);
 
 //ruta login sin restricción de acceso
